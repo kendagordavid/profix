@@ -17,7 +17,7 @@ export function HeroSection() {
     <section className="relative min-h-[620px] overflow-hidden bg-navy-900 lg:min-h-[680px]">
       <div className="absolute inset-0">
         <Image
-          src="/images/hero.jpg"
+          src="/images/hero/technician-hero.jpg"
           alt="PROfix technician with home appliances"
           fill
           priority

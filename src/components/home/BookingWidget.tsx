@@ -103,7 +103,7 @@ export function BookingWidget() {
 
         <button
           type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-md bg-orange-500 py-4 text-sm font-bold text-white shadow-md shadow-orange-500/20 transition hover:bg-orange-600"
+          className="flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 py-4 text-sm font-bold text-white shadow-md shadow-orange-500/20 transition hover:bg-orange-600"
         >
           Continue
           <ArrowRight className="h-4 w-4" />

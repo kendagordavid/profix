@@ -19,7 +19,7 @@ const SERVICE_ICONS = {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="bg-white py-16 lg:py-20">
+    <section id="services" className="scroll-mt-24 bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:items-start lg:gap-12">
           <div className="lg:pt-2">
@@ -35,7 +35,7 @@ export function ServicesSection() {
             </p>
             <Link
               href="#services"
-              className="mt-6 inline-flex items-center gap-2 rounded-md bg-navy-800 px-5 py-3 text-sm font-bold text-white transition hover:bg-navy-900"
+              className="btn-navy mt-6 px-5"
             >
               Explore All Services
               <ArrowRight className="h-4 w-4" />
@@ -50,7 +50,8 @@ export function ServicesSection() {
               return (
                 <div
                   key={service.title}
-                  className="group flex flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  id={service.id}
+                  className="group scroll-mt-24 flex flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="p-4 pb-2">
                     <div

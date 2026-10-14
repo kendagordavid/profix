@@ -19,7 +19,7 @@ export function ApplianceCategories() {
   };
 
   return (
-    <section id="appliances" className="bg-slate-50/80 py-16 lg:py-20">
+    <section id="appliances" className="scroll-mt-24 bg-navy-50 py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div>

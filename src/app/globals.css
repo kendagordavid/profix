@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-50: #eef2ff;
-  --color-navy-100: #dce4ff;
-  --color-navy-200: #b8c9ff;
-  --color-navy-300: #8aa3ff;
-  --color-navy-400: #5b78f0;
-  --color-navy-500: #3556d4;
-  --color-navy-600: #1e3a8a;
-  --color-navy-700: #152a66;
-  --color-navy-800: #0f1f4d;
-  --color-navy-900: #0a1638;
-  --color-navy-950: #060e24;
+  /* Deep navy — footers, dark banners, headings (mockup #0B172A) */
+  --color-navy-50: #f4f7fa;
+  --color-navy-100: #e8eef5;
+  --color-navy-200: #c5d4e8;
+  --color-navy-300: #94a8c9;
+  --color-navy-400: #5c7294;
+  --color-navy-500: #3d5278;
+  --color-navy-600: #2a4060;
+  --color-navy-700: #1e3350;
+  --color-navy-800: #122240;
+  --color-navy-900: #0b172a;
+  --color-navy-950: #070f1c;
 
-  --color-orange-50: #fff7ed;
-  --color-orange-100: #ffedd5;
-  --color-orange-200: #fed7aa;
-  --color-orange-300: #fdba74;
-  --color-orange-400: #fb923c;
-  --color-orange-500: #f97316;
-  --color-orange-600: #ea580c;
-  --color-orange-700: #c2410c;
+  /* Brand blue — primary CTAs, icons, links (mockup #0056D2) */
+  --color-orange-50: #eef4fc;
+  --color-orange-100: #d9e6f7;
+  --color-orange-200: #b3cdf0;
+  --color-orange-300: #7aaae5;
+  --color-orange-400: #4788d9;
+  --color-orange-500: #0056d2;
+  --color-orange-600: #0047b8;
+  --color-orange-700: #003894;
+
+  --color-surface-muted: #f4f7fa;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1ebe5d;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
@@ -34,8 +40,21 @@ body {
 }
 
 ::selection {
-  background-color: #f97316;
+  background-color: #0056d2;
   color: white;
+}
+
+/* Primary / secondary buttons — pill shape per brand mockup */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white shadow-md shadow-orange-500/20 transition hover:bg-orange-600;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-orange-500 bg-white px-6 py-3 text-sm font-bold text-orange-500 transition hover:bg-orange-50;
+}
+
+.btn-navy {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-navy-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-navy-900;
 }
 
 /* Hide scrollbar for carousel */

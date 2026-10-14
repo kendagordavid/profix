@@ -6,7 +6,7 @@ function SocialIcon({ label, children }: { label: string; children: React.ReactN
     <a
       href="#"
       aria-label={label}
-      className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+      className="flex h-7 w-7 items-center justify-center rounded-full bg-orange-500 text-white transition hover:bg-orange-600"
     >
       {children}
     </a>
@@ -15,28 +15,28 @@ function SocialIcon({ label, children }: { label: string; children: React.ReactN
 
 export function TopBar() {
   return (
-    <div className="bg-navy-900 text-sm text-white">
+    <div className="border-b border-slate-200 bg-navy-50 text-sm text-navy-800">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-2.5 lg:px-6">
         <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
           <span className="flex items-center gap-1.5">
-            <MapPin className="h-3.5 w-3.5 shrink-0 text-orange-400" />
+            <MapPin className="h-3.5 w-3.5 shrink-0 text-orange-500" />
             {SITE.location}
           </span>
           <span className="flex items-center gap-1.5">
-            <Clock className="h-3.5 w-3.5 shrink-0 text-orange-400" />
+            <Clock className="h-3.5 w-3.5 shrink-0 text-orange-500" />
             {SITE.hours}
           </span>
           <a
             href={`mailto:${SITE.email}`}
-            className="flex items-center gap-1.5 transition hover:text-orange-300"
+            className="flex items-center gap-1.5 transition hover:text-orange-600"
           >
-            <Mail className="h-3.5 w-3.5 shrink-0 text-orange-400" />
+            <Mail className="h-3.5 w-3.5 shrink-0 text-orange-500" />
             {SITE.email}
           </a>
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="text-white/70">Follow Us:</span>
+          <span className="text-slate-500">Follow Us:</span>
           <div className="flex items-center gap-1.5">
             <SocialIcon label="Facebook">
               <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">

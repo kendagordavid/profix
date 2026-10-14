@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Phone, Shield, Star, Users } from "lucide-react";
+import { Calendar, Phone, Shield, Users } from "lucide-react";
 import { BookingWidget } from "@/components/home/BookingWidget";
 import { SITE } from "@/lib/constants";
 
@@ -38,7 +38,7 @@ export function HeroSection() {
               We Fix. We Care.
               <br />
               We Keep You{" "}
-              <span className="text-orange-400">Running.</span>
+              <span className="text-orange-300">Running.</span>
             </h1>
 
             <p className="mt-5 max-w-md text-[15px] leading-relaxed text-slate-200">
@@ -49,7 +49,7 @@ export function HeroSection() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="#book"
-                className="inline-flex items-center gap-2 rounded-md bg-orange-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-orange-500/25 transition hover:bg-orange-600"
+                className="btn-primary shadow-lg shadow-orange-500/25"
               >
                 <Calendar className="h-4 w-4" />
                 Book a Repair
@@ -58,14 +58,14 @@ export function HeroSection() {
                 href={SITE.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-slate-800 shadow-md transition hover:bg-slate-50"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-800 shadow-md transition hover:bg-slate-50"
               >
                 <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
                 Chat on WhatsApp
               </a>
               <a
                 href={SITE.phoneHref}
-                className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
               >
                 <Phone className="h-4 w-4" />
                 Call Us Now
@@ -73,20 +73,6 @@ export function HeroSection() {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-5 border-t border-white/15 pt-8">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-md">
-                  <span className="text-lg font-bold text-blue-500">G</span>
-                </div>
-                <div>
-                  <p className="flex items-center gap-1 text-sm font-bold text-white">
-                    <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
-                    {SITE.googleRating}/5 Google Rating
-                  </p>
-                  <p className="text-xs text-slate-300">
-                    from {SITE.googleReviews.toLocaleString()}+ reviews
-                  </p>
-                </div>
-              </div>
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-orange-500 shadow-md">
                   <Shield className="h-5 w-5 text-white" />

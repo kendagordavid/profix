@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Phone, Shield, Users } from "lucide-react";
-import { BookingWidget } from "@/components/home/BookingWidget";
+import { ArrowRight, Wrench } from "lucide-react";
+import { SERVICE_ICONS } from "@/components/home/service-icons";
+import { SERVICES } from "@/content/services";
 import { SITE } from "@/lib/constants";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -14,106 +15,94 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[620px] overflow-hidden bg-navy-900 lg:min-h-[680px]">
-      <div className="absolute inset-0">
+    <section className="relative overflow-hidden bg-navy-900">
+      <div className="absolute inset-0 overflow-hidden lg:left-[38%]">
         <Image
           src="/images/hero/technician-hero.jpg"
-          alt="PROfix technician with home appliances"
+          alt="PROfix technician at work"
           fill
           priority
           className="animate-ken-burns object-cover object-[70%_center]"
-          sizes="100vw"
+          sizes="(min-width: 1024px) 62vw, 100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/70 to-navy-900/20" />
+        <div className="absolute inset-0 bg-navy-900/80 lg:bg-transparent lg:bg-gradient-to-r lg:from-navy-900 lg:via-navy-900/30 lg:to-transparent" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 py-12 lg:px-6 lg:py-16">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-xl lg:max-w-[520px]">
-            <span className="animate-in inline-block rounded bg-navy-700/90 px-3 py-1.5 text-[11px] font-bold tracking-wide text-white">
-              #1 APPLIANCE CARE COMPANY IN KENYA
-            </span>
+      <div className="relative mx-auto max-w-7xl px-4 py-16 lg:px-6 lg:py-20">
+        <div className="max-w-[600px]">
+          <h1 className="animate-in text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-[3.25rem]">
+            Professional appliance care from installation to{" "}
+            <span className="text-orange-400">recovery.</span>
+          </h1>
 
-            <h1
-              style={{ "--delay": "120ms" } as React.CSSProperties}
-              className="animate-in mt-5 text-[2.5rem] font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-[3.4rem]"
-            >
-              We Fix. We Care.
-              <br />
-              We Keep You{" "}
-              <span className="text-orange-300">Running.</span>
-            </h1>
+          <p
+            style={{ "--delay": "120ms" } as React.CSSProperties}
+            className="animate-in mt-5 max-w-lg text-base leading-relaxed text-slate-200"
+          >
+            We repair, install, maintain and give new life to your appliances —
+            at home, at work and across your property developments.
+          </p>
 
-            <p
-              style={{ "--delay": "240ms" } as React.CSSProperties}
-              className="animate-in mt-5 max-w-md text-[15px] leading-relaxed text-slate-200"
-            >
-              Professional repair, maintenance, installation, consultation &amp;
-              recovery services for all home and commercial appliances.
-            </p>
-
-            <div
-              style={{ "--delay": "360ms" } as React.CSSProperties}
-              className="animate-in mt-7 flex flex-wrap gap-3"
-            >
-              <Link
-                href="/book"
-                className="btn-primary shadow-lg shadow-orange-500/25"
-              >
-                <Calendar className="h-4 w-4" />
-                Book a Repair
-              </Link>
-              <a
-                href={SITE.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-800 shadow-md transition hover:bg-slate-50"
-              >
-                <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
-                Chat on WhatsApp
-              </a>
-              <a
-                href={SITE.phoneHref}
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
-              >
-                <Phone className="h-4 w-4" />
-                Call Us Now
-              </a>
-            </div>
-
-            <div
-              style={{ "--delay": "480ms" } as React.CSSProperties}
-              className="animate-in mt-10 flex flex-wrap items-center gap-5 border-t border-white/15 pt-8"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-orange-500 shadow-md">
-                  <Shield className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-white">90 Days</p>
-                  <p className="text-xs text-slate-300">Service Warranty</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-navy-600 shadow-md">
-                  <Users className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-white">Certified</p>
-                  <p className="text-xs text-slate-300">Expert Technicians</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ul
+            style={{ "--delay": "240ms" } as React.CSSProperties}
+            className="animate-in mt-7 flex flex-wrap gap-x-4 gap-y-3"
+          >
+            {SERVICES.map((service) => {
+              const Icon = SERVICE_ICONS[service.icon] ?? Wrench;
+              return (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="group flex items-center gap-2 text-sm font-semibold text-white"
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/40 transition group-hover:border-orange-400 group-hover:bg-orange-500">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    {service.title.replace("Preventive ", "")}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
           <div
-            style={{ "--delay": "300ms" } as React.CSSProperties}
-            className="animate-in flex shrink-0 justify-center lg:justify-end"
+            style={{ "--delay": "360ms" } as React.CSSProperties}
+            className="animate-in mt-8 flex flex-wrap gap-3"
           >
-            <BookingWidget />
+            <Link href="/book" className="btn-primary shadow-lg shadow-orange-500/25">
+              Request Appliance Service
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-white/60 px-6 py-3 text-sm font-bold text-white transition hover:border-white hover:bg-white/10"
+            >
+              Developers &amp; Projects
+            </Link>
           </div>
+
+          <a
+            href={SITE.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ "--delay": "480ms" } as React.CSSProperties}
+            className="animate-in mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-200 transition hover:text-white"
+          >
+            <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+            Call or WhatsApp {SITE.phone}
+          </a>
         </div>
       </div>
+
+      <p
+        aria-hidden="true"
+        style={{ "--delay": "700ms" } as React.CSSProperties}
+        className="animate-in absolute bottom-8 right-10 hidden -rotate-6 text-right font-script text-3xl leading-tight text-white drop-shadow-lg lg:block xl:text-4xl"
+      >
+        Your appliances.
+        <br />
+        Our expertise.
+      </p>
     </section>
   );
 }

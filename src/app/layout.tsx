@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Caveat, Inter } from "next/font/google";
 import "./globals.css";
-import { TopBar } from "@/components/layout/TopBar";
 import { Header } from "@/components/layout/Header";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { Footer } from "@/components/layout/Footer";
@@ -10,6 +9,12 @@ import { ScrollReveal } from "@/components/layout/ScrollReveal";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-caveat",
 });
 
 export const metadata: Metadata = {
@@ -31,9 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} font-sans`}>
-        <TopBar />
+    <html lang="en" className={`${inter.variable} ${caveat.variable}`}>
+      <body className="font-sans">
         <Header />
         <main>{children}</main>
         <Footer />

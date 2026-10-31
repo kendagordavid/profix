@@ -31,7 +31,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "maintenance",
-    title: "Maintenance",
+    title: "Preventive Maintenance",
     description: "Keep your appliances running longer.",
     icon: "tool",
     color: "bg-emerald-600",

@@ -1,18 +1,12 @@
-import { AboutSection } from "@/components/home/AboutSection";
-import { ApplianceCategories } from "@/components/home/ApplianceCategories";
-import { BlogSection } from "@/components/home/BlogSection";
-import { BrandsSection } from "@/components/home/BrandsSection";
-import { FAQSection } from "@/components/home/FAQSection";
-import { FeaturesBar } from "@/components/home/FeaturesBar";
+import { AppliancesWeHandle } from "@/components/home/AppliancesWeHandle";
+import { CoreServices } from "@/components/home/CoreServices";
 import { HeroSection } from "@/components/home/HeroSection";
-import { HowItWorks } from "@/components/home/HowItWorks";
 import { LifecycleSection } from "@/components/home/LifecycleSection";
-import { PackagesSection } from "@/components/home/PackagesSection";
-import { ServiceAreasSection } from "@/components/home/ServiceAreasSection";
-import { ServicesSection } from "@/components/home/ServicesSection";
-import { StatsBar } from "@/components/home/StatsBar";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { ProjectsCta } from "@/components/home/ProjectsCta";
 import { WhoWeServe } from "@/components/home/WhoWeServe";
+import { WhyProfix } from "@/components/home/WhyProfix";
+import { PropertySolutions } from "@/components/marketing/PropertySolutions";
+
 export default function HomePage() {
   return (
     <>
@@ -21,43 +15,22 @@ export default function HomePage() {
         <WhoWeServe />
       </div>
       <div data-reveal>
-        <StatsBar />
+        <CoreServices />
       </div>
       <div data-reveal>
-        <FeaturesBar />
-      </div>
-      <div data-reveal>
-        <HowItWorks />
-      </div>
-      <div data-reveal>
-        <ApplianceCategories />
-      </div>
-      <div data-reveal>
-        <BrandsSection />
-      </div>
-      <div data-reveal>
-        <ServicesSection />
+        <AppliancesWeHandle />
       </div>
       <div data-reveal>
         <LifecycleSection />
       </div>
       <div data-reveal>
-        <PackagesSection />
+        <PropertySolutions />
       </div>
       <div data-reveal>
-        <ServiceAreasSection />
+        <WhyProfix />
       </div>
       <div data-reveal>
-        <TestimonialsSection />
-      </div>
-      <div data-reveal>
-        <AboutSection />
-      </div>
-      <div data-reveal>
-        <FAQSection />
-      </div>
-      <div data-reveal>
-        <BlogSection />
+        <ProjectsCta />
       </div>
     </>
   );

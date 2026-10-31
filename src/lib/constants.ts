@@ -20,121 +20,48 @@ export const SITE = {
   },
 } as const;
 
-export const STATS = [
-  { value: `${SITE.yearsInBusiness}+`, label: "Years Experience" },
-  { value: `${SITE.jobsCompleted.toLocaleString()}+`, label: "Jobs Completed" },
-  { value: "90 Days", label: "Repair Warranty" },
-  { value: `${SITE.brandsServiced}+`, label: "Brands Served" },
-] as const;
-
-export const HOW_IT_WORKS = [
+export const APPLIANCES_WE_HANDLE = [
   {
-    step: 1,
-    title: "Tell Us the Problem",
-    description:
-      "Select your appliance, brand, and issue — or message us on WhatsApp. Takes under a minute.",
+    title: "Refrigeration",
+    image: "/images/appliances/refrigerator.jpg",
+    items: ["Refrigerators", "Freezers", "Fridge-freezers", "Display chillers"],
+    href: "/appliances/refrigerators",
   },
   {
-    step: 2,
-    title: "Get a Transparent Quote",
-    description:
-      "We assess the fault and give you a clear price in KES before any work begins. No surprises.",
+    title: "Residential Air Conditioning",
+    image: null,
+    items: ["Split ACs", "Inverter split ACs", "Window ACs", "Portable ACs", "Multi-split systems"],
+    href: "/appliances/air-conditioners",
   },
   {
-    step: 3,
-    title: "We Come to You",
-    description:
-      "A certified technician arrives at your home or business anywhere in Nairobi, usually same day.",
+    title: "Washing & Drying",
+    image: "/images/appliances/washing-machine.jpg",
+    items: ["Washing machines", "Dryers", "Washer-dryers"],
+    href: "/appliances/washing-machines",
   },
   {
-    step: 4,
-    title: "Fixed & Guaranteed",
-    description:
-      "We repair with genuine parts, test everything, and back the job with a 90-day warranty.",
-  },
-] as const;
-
-export const WHO_WE_SERVE = [
-  {
-    icon: "home",
-    title: "Homeowners & Families",
-    description:
-      "Fast, same-day repairs for the appliances your household depends on every day.",
-    examples: ["Fridges", "Washing machines", "Cookers"],
-    cta: "Book a home repair",
-    href: "/book",
+    title: "Cooking",
+    image: "/images/appliances/cooker-oven.jpg",
+    items: ["Cookers", "Ovens", "Hobs"],
+    href: "/appliances/cookers-ovens",
   },
   {
-    icon: "building",
-    title: "Landlords & Property Managers",
-    description:
-      "One reliable team for every unit — installations, move-in checks, and tenant call-outs.",
-    examples: ["Apartments", "Rentals", "Developments"],
-    cta: "Property solutions",
+    title: "Cleaning",
+    image: "/images/appliances/dishwasher.jpg",
+    items: ["Dishwashers"],
+    href: "/appliances/dishwashers",
+  },
+  {
+    title: "Other Appliances",
+    image: "/images/appliances/microwave.jpg",
+    items: ["Microwaves", "Water dispensers", "Other supported"],
+    href: "/appliances",
+  },
+  {
+    title: "Commercial Appliances",
+    image: "/images/appliances/display-chiller.jpg",
+    items: ["Commercial refrigeration", "Commercial AC & HVAC", "Commercial cooking", "Commercial laundry"],
     href: "/commercial",
-  },
-  {
-    icon: "utensils",
-    title: "Restaurants, Hotels & Cafés",
-    description:
-      "Keep kitchens and cold rooms running with priority response and scheduled servicing.",
-    examples: ["Cold rooms", "Commercial ovens", "Laundry"],
-    cta: "Commercial care plans",
-    href: "/commercial",
-  },
-  {
-    icon: "store",
-    title: "Shops, Offices & Institutions",
-    description:
-      "Maintenance contracts for display chillers, office kitchens, and staff facilities.",
-    examples: ["Display chillers", "Water dispensers", "AC units"],
-    cta: "Get a business quote",
-    href: "/book?plan=commercial",
-  },
-] as const;
-
-export const TESTIMONIALS = [
-  {
-    quote:
-      "PROfix fixed my Samsung washing machine the same day. The technician was professional, explained everything clearly, and the price was fair.",
-    name: "Grace Wanjiku",
-    area: "Westlands, Nairobi",
-    initials: "GW",
-  },
-  {
-    quote:
-      "My LG fridge stopped cooling and they came within three hours. Compressor replaced and it's been perfect for months. Highly recommended!",
-    name: "David Otieno",
-    area: "Kilimani, Nairobi",
-    initials: "DO",
-  },
-  {
-    quote:
-      "Their technician showed me how to clean and handle my fridge properly. I've saved on power and avoided constant repairs since.",
-    name: "Faith Mwangi",
-    area: "Karen, Nairobi",
-    initials: "FM",
-  },
-  {
-    quote:
-      "Called PROfix for a leaking dishwasher. Same-afternoon visit, faulty seal replaced, everything tested. Excellent work!",
-    name: "Peter Kamau",
-    area: "Lavington, Nairobi",
-    initials: "PK",
-  },
-  {
-    quote:
-      "Used PROfix twice — washing machine and oven. Both times fast, professional, and affordable. My go-to in Nairobi.",
-    name: "Naomi Muthoni",
-    area: "Parklands, Nairobi",
-    initials: "NM",
-  },
-  {
-    quote:
-      "Prompt, trustworthy, and friendly. They repaired my Bosch washer that had been making a terrible noise. Quiet as new now.",
-    name: "James Njoroge",
-    area: "Kasarani, Nairobi",
-    initials: "JN",
   },
 ] as const;
 
@@ -191,36 +118,6 @@ export const FAQ_ITEMS = [
   },
 ] as const;
 
-export const SERVICE_AREAS = {
-  nairobi: [
-    "Westlands",
-    "Karen",
-    "Kilimani",
-    "Lavington",
-    "Parklands",
-    "Eastleigh",
-    "South C",
-    "Langata",
-    "Kileleshwa",
-    "Kasarani",
-    "Roysambu",
-    "Embakasi",
-    "Buruburu",
-    "Rongai",
-    "Ngong Road",
-    "Industrial Area",
-  ],
-  surrounding: [
-    "Kiambu",
-    "Ruiru",
-    "Ruaka",
-    "Thika Road",
-    "Syokimau",
-    "Kitengela",
-    "Machakos",
-  ],
-} as const;
-
 export const PACKAGES = [
   {
     title: "Diagnosis & Quote",
@@ -245,60 +142,6 @@ export const PACKAGES = [
   },
 ] as const;
 
-export const FOOTER_QUICK_LINKS = [
-  { label: "Services", href: "/services" },
-  { label: "Appliances", href: "/appliances" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Commercial", href: "/commercial" },
-  { label: "About Us", href: "/about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-] as const;
-
-export const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services", hasDropdown: true },
-  { label: "Appliances", href: "/appliances", hasDropdown: true },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Commercial", href: "/commercial" },
-  { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-] as const;
-
-export const FEATURES = [
-  {
-    icon: "clock",
-    title: "Same Day Service",
-    description: "We are fast & reliable",
-  },
-  {
-    icon: "shield",
-    title: "Genuine Parts",
-    description: "100% original parts",
-  },
-  {
-    icon: "award",
-    title: "Expert Technicians",
-    description: "Trained & certified",
-  },
-  {
-    icon: "wallet",
-    title: "Affordable Pricing",
-    description: "Transparent & fair",
-  },
-  {
-    icon: "badge",
-    title: "90 Days Warranty",
-    description: "On parts & labour",
-  },
-  {
-    icon: "grid",
-    title: "All Major Brands",
-    description: "We've got you covered",
-  },
-] as const;
-
 export const ISSUE_OPTIONS = [
   "Not turning on",
   "Not cooling / heating",
@@ -307,4 +150,111 @@ export const ISSUE_OPTIONS = [
   "Installation needed",
   "Maintenance / cleaning",
   "Other",
+] as const;
+
+export const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Appliances", href: "/appliances" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about" },
+  { label: "Knowledge Centre", href: "/blog" },
+] as const;
+
+export const WHO_WE_SERVE = [
+  { icon: "home", label: "Homes & Individuals", href: "/book" },
+  { icon: "user", label: "Landlords", href: "/commercial" },
+  { icon: "building", label: "Property Managers", href: "/commercial" },
+  { icon: "briefcase", label: "Businesses", href: "/commercial" },
+  { icon: "utensils", label: "Hotels & Restaurants", href: "/commercial" },
+  { icon: "landmark", label: "Offices & Institutions", href: "/commercial" },
+  { icon: "buildings", label: "Developers & Projects", href: "/projects" },
+] as const;
+
+export const LIFECYCLE = [
+  { icon: "users", label: "Consult", description: "Choose the right appliance.", href: "/services/consultation" },
+  { icon: "settings", label: "Install", description: "Install correctly and safely.", href: "/services/installation" },
+  { icon: "calendar", label: "Maintain", description: "Keep it operating reliably.", href: "/services/maintenance" },
+  { icon: "wrench", label: "Repair", description: "Diagnose and restore faults.", href: "/services/repair" },
+  { icon: "recycle", label: "Recover", description: "Repair, restore, reuse or recover.", href: "/services/recovery" },
+  { icon: "replace", label: "Replace", description: "When recovery is no longer practical.", href: "/services/consultation" },
+] as const;
+
+export const DEVELOPER_SERVICES = [
+  "Consultation & specification",
+  "Sourcing & delivery coordination",
+  "Installation & testing",
+  "Commissioning & handover",
+  "After-sales support",
+] as const;
+
+export const PROJECT_TYPES = [
+  "Apartments",
+  "Gated communities",
+  "Serviced apartments",
+  "Hotels",
+  "Furnished developments",
+  "Offices",
+  "Institutions",
+] as const;
+
+export const PROJECT_WORKFLOW = [
+  "Specify",
+  "Source",
+  "Deliver",
+  "Install",
+  "Test",
+  "Commission",
+  "Handover",
+  "After-Sales",
+] as const;
+
+export const BUSINESS_SERVICES = [
+  "Multi-appliance maintenance",
+  "Inspections & scheduled servicing",
+  "Emergency repairs",
+  "Installation & replacement",
+  "Recovery & asset records",
+  "Service documentation",
+  "Maintenance contracts",
+] as const;
+
+export const BUSINESS_AUDIENCES = [
+  { icon: "user", label: "Landlords" },
+  { icon: "building", label: "Property managers" },
+  { icon: "utensils", label: "Hotels & restaurants" },
+  { icon: "briefcase", label: "Offices" },
+  { icon: "landmark", label: "Institutions" },
+  { icon: "store", label: "Businesses" },
+] as const;
+
+export const WHY_PROFIX = [
+  { icon: "search", title: "Technical Diagnosis", description: "We find the real problem." },
+  { icon: "settings", title: "Professional Installation", description: "Safe and verified." },
+  { icon: "shield", title: "Multi-Brand Capability", description: "All major brands." },
+  { icon: "file", title: "Documented Service", description: "Full service records." },
+  { icon: "check", title: "Preventive Approach", description: "Fix before it fails." },
+  { icon: "headset", title: "After-Sales Support", description: "We're with you." },
+] as const;
+
+export const FOOTER_COLUMNS = [
+  {
+    title: "Projects",
+    links: [
+      { label: "Developers", href: "/projects" },
+      { label: "Property Managers", href: "/commercial" },
+      { label: "Business Solutions", href: "/commercial" },
+      { label: "Projects", href: "/projects" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Knowledge Centre", href: "/blog" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ] as const;

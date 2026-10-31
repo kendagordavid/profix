@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Calendar, ChevronDown, Menu, Phone, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
 function Logo() {
@@ -51,7 +51,7 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 lg:px-6">
         <Logo />
 
-        <nav className="hidden items-center gap-0.5 xl:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map((link) => {
             const isActive =
               link.href === "/"
@@ -61,16 +61,13 @@ export function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`flex items-center gap-0.5 rounded-md px-2.5 py-2 text-[13px] font-semibold transition ${
+                className={`rounded-md px-3 py-2 text-[13px] font-semibold transition ${
                   isActive
                     ? "text-orange-500"
                     : "text-slate-700 hover:text-navy-700"
                 }`}
               >
                 {link.label}
-                {"hasDropdown" in link && link.hasDropdown && (
-                  <ChevronDown className="h-3 w-3 text-slate-400" />
-                )}
               </Link>
             );
           })}
@@ -79,9 +76,9 @@ export function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <a
             href={SITE.phoneHref}
-            className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-[13px] font-bold text-navy-800 transition hover:border-orange-300 hover:bg-orange-50"
+            className="flex items-center gap-2 px-2 py-2.5 text-[13px] font-bold text-navy-800 transition hover:text-orange-500"
           >
-            <Phone className="h-3.5 w-3.5" />
+            <Phone className="h-4 w-4" />
             {SITE.phone}
           </a>
           <a
@@ -97,17 +94,16 @@ export function Header() {
           </a>
           <Link
             href="/book"
-            className="flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2.5 text-[13px] font-bold text-white transition hover:bg-orange-600"
+            className="rounded-full bg-navy-800 px-5 py-2.5 text-[13px] font-bold text-white transition hover:bg-navy-900"
           >
-            <Calendar className="h-3.5 w-3.5" />
-            Book a Repair
+            Request Service
           </Link>
         </div>
 
         <button
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="rounded-lg p-2 text-navy-800 hover:bg-slate-100 xl:hidden"
+          className="rounded-lg p-2 text-navy-800 hover:bg-slate-100 lg:hidden"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -115,7 +111,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-slate-100 bg-white px-4 py-4 xl:hidden">
+        <div className="border-t border-slate-100 bg-white px-4 py-4 lg:hidden">
           <nav className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link
@@ -139,10 +135,9 @@ export function Header() {
             <Link
               href="/book"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-full bg-orange-500 px-4 py-3 text-sm font-semibold text-white"
+              className="flex items-center justify-center rounded-full bg-navy-800 px-4 py-3 text-sm font-semibold text-white"
             >
-              <Calendar className="h-4 w-4" />
-              Book a Repair
+              Request Service
             </Link>
           </div>
         </div>

@@ -30,6 +30,7 @@
   --color-whatsapp-hover: #1ebe5d;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-caveat), cursive;
 }
 
 html {
@@ -88,12 +89,6 @@ body {
   }
 }
 
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @keyframes pulse-ring {
   from {
     transform: scale(1);
@@ -111,14 +106,16 @@ body {
   20%,
   100% {
     border-color: rgb(255 255 255 / 0.3);
-    background-color: rgb(255 255 255 / 0.1);
+    background-color: white;
+    color: var(--color-orange-500);
     box-shadow: none;
   }
   6%,
   12% {
     border-color: var(--color-orange-300);
     background-color: var(--color-orange-500);
-    box-shadow: 0 0 0 6px rgb(0 86 210 / 0.3);
+    color: white;
+    box-shadow: 0 0 0 8px rgb(0 86 210 / 0.35);
   }
 }
 
@@ -186,20 +183,6 @@ body {
   animation: none !important;
 }
 
-/* Brand marquee */
-.marquee {
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-}
-
-.marquee-track {
-  animation: marquee 35s linear infinite;
-}
-
-.marquee:hover .marquee-track,
-.marquee:focus-within .marquee-track {
-  animation-play-state: paused;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .animate-in,
   .animate-ken-burns,
@@ -207,25 +190,5 @@ body {
   .animate-step-glow,
   .animate-arrow-nudge {
     animation: none;
-  }
-
-  .marquee {
-    mask-image: none;
-  }
-
-  .marquee-track {
-    animation: none;
-    width: auto;
-    justify-content: center;
-  }
-
-  .marquee-track > ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-right: 0;
-  }
-
-  .marquee-track > [aria-hidden="true"] {
-    display: none;
   }
 }

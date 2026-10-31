@@ -54,6 +54,45 @@ export const HOW_IT_WORKS = [
   },
 ] as const;
 
+export const WHO_WE_SERVE = [
+  {
+    icon: "home",
+    title: "Homeowners & Families",
+    description:
+      "Fast, same-day repairs for the appliances your household depends on every day.",
+    examples: ["Fridges", "Washing machines", "Cookers"],
+    cta: "Book a home repair",
+    href: "/book",
+  },
+  {
+    icon: "building",
+    title: "Landlords & Property Managers",
+    description:
+      "One reliable team for every unit — installations, move-in checks, and tenant call-outs.",
+    examples: ["Apartments", "Rentals", "Developments"],
+    cta: "Property solutions",
+    href: "/commercial",
+  },
+  {
+    icon: "utensils",
+    title: "Restaurants, Hotels & Cafés",
+    description:
+      "Keep kitchens and cold rooms running with priority response and scheduled servicing.",
+    examples: ["Cold rooms", "Commercial ovens", "Laundry"],
+    cta: "Commercial care plans",
+    href: "/commercial",
+  },
+  {
+    icon: "store",
+    title: "Shops, Offices & Institutions",
+    description:
+      "Maintenance contracts for display chillers, office kitchens, and staff facilities.",
+    examples: ["Display chillers", "Water dispensers", "AC units"],
+    cta: "Get a business quote",
+    href: "/book?plan=commercial",
+  },
+] as const;
+
 export const TESTIMONIALS = [
   {
     quote:

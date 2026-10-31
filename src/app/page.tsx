@@ -12,10 +12,12 @@ import { ServiceAreasSection } from "@/components/home/ServiceAreasSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { StatsBar } from "@/components/home/StatsBar";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { WhoWeServe } from "@/components/home/WhoWeServe";
 export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <WhoWeServe />
       <StatsBar />
       <FeaturesBar />
       <HowItWorks />

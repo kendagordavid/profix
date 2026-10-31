@@ -19,7 +19,7 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div data-stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {HOW_IT_WORKS.map((step) => (
             <div
               key={step.step}

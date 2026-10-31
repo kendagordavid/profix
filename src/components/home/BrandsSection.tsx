@@ -18,20 +18,32 @@ export function BrandsSection() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          {BRANDS.map((brand) => (
-            <Link
-              key={brand.slug}
-              href={`/brands/${brand.slug}`}
-              className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm font-bold text-navy-800 transition hover:border-orange-300 hover:bg-orange-50 hover:text-orange-600"
-            >
-              {brand.name}
-            </Link>
-          ))}
-          <span className="rounded-lg border border-dashed border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-500">
-            + Many More
-          </span>
+        <div className="marquee mt-8 overflow-hidden">
+          <div className="marquee-track flex w-max">
+            {[false, true].map((duplicate) => (
+              <ul
+                key={String(duplicate)}
+                aria-hidden={duplicate || undefined}
+                className="flex shrink-0 gap-3 pr-3"
+              >
+                {BRANDS.map((brand) => (
+                  <li key={brand.slug}>
+                    <Link
+                      href={`/brands/${brand.slug}`}
+                      tabIndex={duplicate ? -1 : undefined}
+                      className="block whitespace-nowrap rounded-lg border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-bold text-navy-800 transition hover:border-orange-300 hover:bg-orange-50 hover:text-orange-600"
+                    >
+                      {brand.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
         </div>
+        <p className="mt-5 text-center text-sm font-semibold text-slate-500">
+          + many more brands
+        </p>
       </div>
     </section>
   );

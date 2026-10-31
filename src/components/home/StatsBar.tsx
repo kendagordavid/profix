@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/home/CountUp";
 import { STATS } from "@/lib/constants";
 
 export function StatsBar() {
@@ -13,9 +14,10 @@ export function StatsBar() {
               key={stat.label}
               className="flex flex-col items-center px-2 text-center lg:px-4"
             >
-              <span className="text-xl font-extrabold text-white sm:text-2xl">
-                {stat.value}
-              </span>
+              <CountUp
+                value={stat.value}
+                className="text-xl font-extrabold tabular-nums text-white sm:text-2xl"
+              />
               <span className="mt-0.5 text-[11px] font-medium text-blue-100 sm:text-xs">
                 {stat.label}
               </span>

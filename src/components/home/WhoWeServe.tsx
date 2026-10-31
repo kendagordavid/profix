@@ -26,7 +26,7 @@ export function WhoWeServe() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div data-stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {WHO_WE_SERVE.map((audience) => {
             const Icon = ICON_MAP[audience.icon];
             return (

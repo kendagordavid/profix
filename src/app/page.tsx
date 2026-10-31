@@ -17,20 +17,48 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <WhoWeServe />
-      <StatsBar />
-      <FeaturesBar />
-      <HowItWorks />
-      <ApplianceCategories />
-      <BrandsSection />
-      <ServicesSection />
-      <LifecycleSection />
-      <PackagesSection />
-      <ServiceAreasSection />
-      <TestimonialsSection />
-      <AboutSection />
-      <FAQSection />
-      <BlogSection />
+      <div data-reveal>
+        <WhoWeServe />
+      </div>
+      <div data-reveal>
+        <StatsBar />
+      </div>
+      <div data-reveal>
+        <FeaturesBar />
+      </div>
+      <div data-reveal>
+        <HowItWorks />
+      </div>
+      <div data-reveal>
+        <ApplianceCategories />
+      </div>
+      <div data-reveal>
+        <BrandsSection />
+      </div>
+      <div data-reveal>
+        <ServicesSection />
+      </div>
+      <div data-reveal>
+        <LifecycleSection />
+      </div>
+      <div data-reveal>
+        <PackagesSection />
+      </div>
+      <div data-reveal>
+        <ServiceAreasSection />
+      </div>
+      <div data-reveal>
+        <TestimonialsSection />
+      </div>
+      <div data-reveal>
+        <AboutSection />
+      </div>
+      <div data-reveal>
+        <FAQSection />
+      </div>
+      <div data-reveal>
+        <BlogSection />
+      </div>
     </>
   );
 }

@@ -21,7 +21,7 @@ export function BlogSection() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div data-stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {preview.map((post) => (
             <article
               key={post.slug}

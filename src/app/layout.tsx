@@ -5,6 +5,7 @@ import { TopBar } from "@/components/layout/TopBar";
 import { Header } from "@/components/layout/Header";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollReveal } from "@/components/layout/ScrollReveal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <ScrollReveal />
       </body>
     </html>
   );

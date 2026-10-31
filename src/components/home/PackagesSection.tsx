@@ -25,7 +25,7 @@ export function PackagesSection({ showIntro = true }: { showIntro?: boolean }) {
         </div>
         )}
 
-        <div className={`grid gap-5 sm:grid-cols-2 lg:grid-cols-3 ${showIntro ? "mt-10" : ""}`}>
+        <div data-stagger className={`grid gap-5 sm:grid-cols-2 lg:grid-cols-3 ${showIntro ? "mt-10" : ""}`}>
           {PACKAGES.map((pkg, index) => (
             <div
               key={pkg.title}

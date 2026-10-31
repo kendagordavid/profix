@@ -21,7 +21,7 @@ export function HeroSection() {
           alt="PROfix technician with home appliances"
           fill
           priority
-          className="object-cover object-[70%_center]"
+          className="animate-ken-burns object-cover object-[70%_center]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/70 to-navy-900/20" />
@@ -30,23 +30,32 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-7xl px-4 py-12 lg:px-6 lg:py-16">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl lg:max-w-[520px]">
-            <span className="inline-block rounded bg-navy-700/90 px-3 py-1.5 text-[11px] font-bold tracking-wide text-white">
+            <span className="animate-in inline-block rounded bg-navy-700/90 px-3 py-1.5 text-[11px] font-bold tracking-wide text-white">
               #1 APPLIANCE CARE COMPANY IN KENYA
             </span>
 
-            <h1 className="mt-5 text-[2.5rem] font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-[3.4rem]">
+            <h1
+              style={{ "--delay": "120ms" } as React.CSSProperties}
+              className="animate-in mt-5 text-[2.5rem] font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-[3.4rem]"
+            >
               We Fix. We Care.
               <br />
               We Keep You{" "}
               <span className="text-orange-300">Running.</span>
             </h1>
 
-            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-slate-200">
+            <p
+              style={{ "--delay": "240ms" } as React.CSSProperties}
+              className="animate-in mt-5 max-w-md text-[15px] leading-relaxed text-slate-200"
+            >
               Professional repair, maintenance, installation, consultation &amp;
               recovery services for all home and commercial appliances.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div
+              style={{ "--delay": "360ms" } as React.CSSProperties}
+              className="animate-in mt-7 flex flex-wrap gap-3"
+            >
               <Link
                 href="/book"
                 className="btn-primary shadow-lg shadow-orange-500/25"
@@ -72,7 +81,10 @@ export function HeroSection() {
               </a>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-5 border-t border-white/15 pt-8">
+            <div
+              style={{ "--delay": "480ms" } as React.CSSProperties}
+              className="animate-in mt-10 flex flex-wrap items-center gap-5 border-t border-white/15 pt-8"
+            >
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-orange-500 shadow-md">
                   <Shield className="h-5 w-5 text-white" />
@@ -94,7 +106,10 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="flex shrink-0 justify-center lg:justify-end">
+          <div
+            style={{ "--delay": "300ms" } as React.CSSProperties}
+            className="animate-in flex shrink-0 justify-center lg:justify-end"
+          >
             <BookingWidget />
           </div>
         </div>

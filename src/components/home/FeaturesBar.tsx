@@ -21,7 +21,7 @@ export function FeaturesBar() {
   return (
     <section className="border-y border-slate-100 bg-white py-7 shadow-sm">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
-        <div className="grid grid-cols-2 divide-x-0 divide-y divide-slate-100 sm:grid-cols-3 sm:divide-y-0 lg:grid-cols-6 lg:divide-x">
+        <div data-stagger className="grid grid-cols-2 divide-x-0 divide-y divide-slate-100 sm:grid-cols-3 sm:divide-y-0 lg:grid-cols-6 lg:divide-x">
           {FEATURES.map((feature) => {
             const Icon = ICON_MAP[feature.icon];
             return (

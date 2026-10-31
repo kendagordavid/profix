@@ -66,3 +66,166 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ---------- Motion ---------- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-ring {
+  from {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  to {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+/* Lights each lifecycle step in turn (6 steps, 1s apart) */
+@keyframes step-glow {
+  0%,
+  20%,
+  100% {
+    border-color: rgb(255 255 255 / 0.3);
+    background-color: rgb(255 255 255 / 0.1);
+    box-shadow: none;
+  }
+  6%,
+  12% {
+    border-color: var(--color-orange-300);
+    background-color: var(--color-orange-500);
+    box-shadow: 0 0 0 6px rgb(0 86 210 / 0.3);
+  }
+}
+
+@keyframes arrow-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+}
+
+/* Page-load entrance (hero). Stagger with style={{ "--delay": "200ms" }} */
+.animate-in {
+  animation: fade-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+.animate-ken-burns {
+  animation: ken-burns 9s ease-out both;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.2s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+.animate-step-glow {
+  animation: step-glow 6s ease-in-out infinite;
+}
+
+.animate-arrow-nudge {
+  animation: arrow-nudge 1.6s ease-in-out infinite;
+}
+
+/*
+ * Scroll reveal — ScrollReveal adds .motion-ready to <html> and .is-visible
+ * to elements as they enter the viewport. Without JS nothing is hidden.
+ *   data-reveal  → the element fades up
+ *   data-stagger → its children fade up one after another
+ */
+.motion-ready [data-reveal]:not(.is-visible),
+.motion-ready [data-stagger]:not(.is-visible) > * {
+  opacity: 0;
+}
+
+.motion-ready [data-reveal].is-visible,
+.motion-ready [data-stagger].is-visible > * {
+  animation: fade-up 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+[data-stagger] > :nth-child(2) { animation-delay: 90ms !important; }
+[data-stagger] > :nth-child(3) { animation-delay: 180ms !important; }
+[data-stagger] > :nth-child(4) { animation-delay: 270ms !important; }
+[data-stagger] > :nth-child(5) { animation-delay: 360ms !important; }
+[data-stagger] > :nth-child(6) { animation-delay: 450ms !important; }
+[data-stagger] > :nth-child(7) { animation-delay: 540ms !important; }
+[data-stagger] > :nth-child(n + 8) { animation-delay: 630ms !important; }
+
+/* Already on screen when the page loaded — show without animating */
+.motion-ready .reveal-instant,
+.motion-ready .reveal-instant > * {
+  animation: none !important;
+}
+
+/* Brand marquee */
+.marquee {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  animation: marquee 35s linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in,
+  .animate-ken-burns,
+  .animate-pulse-ring,
+  .animate-step-glow,
+  .animate-arrow-nudge {
+    animation: none;
+  }
+
+  .marquee {
+    mask-image: none;
+  }
+
+  .marquee-track {
+    animation: none;
+    width: auto;
+    justify-content: center;
+  }
+
+  .marquee-track > ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .marquee-track > [aria-hidden="true"] {
+    display: none;
+  }
+}

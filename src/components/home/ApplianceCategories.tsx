@@ -52,6 +52,7 @@ export function ApplianceCategories() {
           <div
             ref={scrollRef}
             className="no-scrollbar flex gap-4 overflow-x-auto pb-1"
+            data-stagger
           >
             {APPLIANCES.map((appliance) => (
               <Link

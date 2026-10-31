@@ -7,7 +7,7 @@ import {
   Settings,
   Wrench,
 } from "lucide-react";
-import { SERVICES } from "@/lib/constants";
+import { SERVICES } from "@/content/services";
 
 const SERVICE_ICONS = {
   wrench: Wrench,
@@ -34,7 +34,7 @@ export function ServicesSection() {
               appliance solutions for homes and businesses across Kenya.
             </p>
             <Link
-              href="#services"
+              href="/services"
               className="btn-navy mt-6 px-5"
             >
               Explore All Services
@@ -50,7 +50,7 @@ export function ServicesSection() {
               return (
                 <div
                   key={service.title}
-                  id={service.id}
+                  id={service.slug}
                   className="group scroll-mt-24 flex flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="p-4 pb-2">
@@ -66,7 +66,7 @@ export function ServicesSection() {
                       {service.description}
                     </p>
                     <Link
-                      href="#book"
+                      href={`/services/${service.slug}`}
                       className="mt-2.5 flex items-center gap-1 text-[11px] font-bold text-navy-600 transition group-hover:text-orange-500"
                     >
                       Learn More

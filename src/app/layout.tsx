@@ -4,7 +4,7 @@ import "./globals.css";
 import { TopBar } from "@/components/layout/TopBar";
 import { Header } from "@/components/layout/Header";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
-import { ChatWidget } from "@/components/layout/ChatWidget";
+import { Footer } from "@/components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +35,7 @@ export default function RootLayout({
         <TopBar />
         <Header />
         <main>{children}</main>
-        <ChatWidget />
+        <Footer />
         <WhatsAppFloat />
       </body>
     </html>

@@ -11,11 +11,12 @@ export const SITE = {
   yearsInBusiness: 5,
   jobsCompleted: 2000,
   brandsServiced: 40,
+  // Leave a profile URL empty to hide its icon.
   social: {
-    facebook: "#",
-    instagram: "#",
-    tiktok: "#",
-    youtube: "#",
+    facebook: "",
+    instagram: "",
+    tiktok: "",
+    youtube: "",
   },
 } as const;
 
@@ -117,7 +118,7 @@ export const FAQ_ITEMS = [
   {
     question: "How much does appliance repair cost?",
     answer:
-      "Costs vary by appliance and fault. Typical repairs range from KSh 1,500 to KSh 12,000. We provide a free diagnosis and transparent quote before any work begins — no obligation.",
+      "Costs vary by appliance and fault. Typical repairs range from KSh 1,500 to KSh 12,000. We diagnose the fault and give you a transparent quote before any work begins — no obligation to proceed.",
   },
   {
     question: "Do you use genuine spare parts?",
@@ -147,23 +148,8 @@ export const FAQ_ITEMS = [
   {
     question: "Can you repair appliances outside Nairobi?",
     answer:
-      "Yes. We also serve Kiambu, Ruiru, Ruaka, Thika Road, Syokimau, and parts of Kajiado and Machakos counties.",
+      "Yes. We also serve Kiambu, Ruiru, Ruaka, Thika Road, Syokimau, Kitengela, and parts of Machakos. A call-out fee may apply outside central Nairobi — we confirm it with you before dispatch.",
   },
-] as const;
-
-export const BRANDS = [
-  "Samsung",
-  "LG",
-  "Bosch",
-  "Whirlpool",
-  "Hotpoint",
-  "Beko",
-  "Haier",
-  "Miele",
-  "Hisense",
-  "Ariston",
-  "Electrolux",
-  "Indesit",
 ] as const;
 
 export const SERVICE_AREAS = {
@@ -200,7 +186,7 @@ export const PACKAGES = [
   {
     title: "Diagnosis & Quote",
     price: "From KSh 1,500",
-    description: "Free fault assessment with a transparent quote before any work begins.",
+    description: "On-site fault assessment with a transparent quote before any work begins.",
     features: ["On-site diagnosis", "Clear KES pricing", "No obligation to proceed"],
     highlighted: false,
   },
@@ -220,43 +206,25 @@ export const PACKAGES = [
   },
 ] as const;
 
-export const BLOG_POSTS = [
-  {
-    title: "How to Clean Your Fridge Safely",
-    excerpt:
-      "Regular cleaning prevents bacteria growth and keeps cooling efficient. Always unplug first, use mild detergent, and dry before switching back on.",
-  },
-  {
-    title: "Why You Shouldn't Keep Switching Off Your Fridge",
-    excerpt:
-      "Turning your fridge off repeatedly can damage the compressor and waste more energy. Keep it steady and use voltage protection.",
-  },
-  {
-    title: "Transporting Your Appliance the Right Way",
-    excerpt:
-      "Always keep your fridge upright when moving it. Wait at least 4–6 hours before turning it on after transportation to protect the compressor.",
-  },
-] as const;
-
 export const FOOTER_QUICK_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Appliances", href: "#appliances" },
-  { label: "Developers Project", href: "#packages" },
-  { label: "About Us", href: "#about" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "Appliances", href: "/appliances" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Commercial", href: "/commercial" },
+  { label: "About Us", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "#services", hasDropdown: true },
-  { label: "Appliances", href: "#appliances", hasDropdown: true },
-  { label: "Developers Project", href: "#packages", hasDropdown: true },
-  { label: "Consultation", href: "#consultation" },
-  { label: "Recovery", href: "#recovery" },
-  { label: "About Us", href: "#about" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services", hasDropdown: true },
+  { label: "Appliances", href: "/appliances", hasDropdown: true },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Commercial", href: "/commercial" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const FEATURES = [
@@ -290,116 +258,6 @@ export const FEATURES = [
     title: "All Major Brands",
     description: "We've got you covered",
   },
-] as const;
-
-export const APPLIANCES = [
-  {
-    name: "Washing Machines",
-    description: "Repair, cleaning, installation & more",
-    image: "/images/appliances/washing-machine.jpg",
-  },
-  {
-    name: "Refrigerators & Freezers",
-    description: "Cooling, gas refill, compressor repair",
-    image: "/images/appliances/refrigerator.jpg",
-  },
-  {
-    name: "Cookers & Ovens",
-    description: "Gas, electric & built-in repairs",
-    image: "/images/appliances/cooker-oven.jpg",
-  },
-  {
-    name: "Dishwashers",
-    description: "Leak fixes, pump & motor repair",
-    image: "/images/appliances/dishwasher.jpg",
-  },
-  {
-    name: "Microwaves",
-    description: "Heating, door & control repairs",
-    image: "/images/appliances/microwave.jpg",
-  },
-  {
-    name: "Dryers",
-    description: "Drum, heating & vent issues",
-    image: "/images/appliances/dryer.jpg",
-  },
-  {
-    name: "Display Chillers",
-    description: "Commercial cooling solutions",
-    image: "/images/appliances/display-chiller.jpg",
-  },
-  {
-    name: "More Appliances",
-    description: "TVs, AC units, water dispensers & more",
-    image: "/images/appliances/more-appliances.jpg",
-  },
-] as const;
-
-export const SERVICES = [
-  {
-    title: "Repair",
-    id: "repair",
-    description: "We fix all faults fast & effectively.",
-    icon: "wrench",
-    color: "bg-orange-500",
-    image: "/images/services/repair.jpg",
-  },
-  {
-    title: "Installation",
-    id: "installation",
-    description: "Professional installations done right.",
-    icon: "settings",
-    color: "bg-navy-700",
-    image: "/images/services/installation.jpg",
-  },
-  {
-    title: "Maintenance",
-    id: "maintenance",
-    description: "Keep your appliances running longer.",
-    icon: "tool",
-    color: "bg-emerald-600",
-    image: "/images/services/maintenance.jpg",
-  },
-  {
-    title: "Consultation",
-    id: "consultation",
-    description: "Expert advice before you buy or upgrade.",
-    icon: "message",
-    color: "bg-navy-600",
-    image: "/images/services/consultation.jpg",
-  },
-  {
-    title: "Recovery",
-    id: "recovery",
-    description: "We restore damaged or neglected appliances.",
-    icon: "refresh",
-    color: "bg-navy-500",
-    image: "/images/services/recovery.jpg",
-  },
-] as const;
-
-export const APPLIANCE_OPTIONS = [
-  "Refrigerator",
-  "Washing Machine",
-  "Cooker / Oven",
-  "Dishwasher",
-  "Microwave",
-  "Dryer",
-  "Air Conditioner",
-  "Display Chiller",
-  "Other",
-] as const;
-
-export const BRAND_OPTIONS = [
-  "Samsung",
-  "LG",
-  "Bosch",
-  "Whirlpool",
-  "Hotpoint",
-  "Beko",
-  "Haier",
-  "Miele",
-  "Other",
 ] as const;
 
 export const ISSUE_OPTIONS = [

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../styles/tokens.css";
 
 @theme {
   /* Deep navy — footers, dark banners, headings (mockup #0B172A) */

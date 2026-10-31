@@ -1,17 +1,21 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { PACKAGES } from "@/lib/constants";
+import { buildBookUrl } from "@/lib/book-url";
 
-export function PackagesSection() {
+const PLAN_SLUGS = ["diagnosis", "standard", "commercial"] as const;
+
+export function PackagesSection({ showIntro = true }: { showIntro?: boolean }) {
   return (
-    <section id="packages" className="scroll-mt-24 bg-navy-50 py-16 lg:py-20">
+    <section id="pricing" className="scroll-mt-24 bg-navy-50 py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
+        {showIntro && (
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-orange-500">
-            Developers Project
+            Pricing
           </p>
           <h2 className="mt-2 text-3xl font-extrabold text-navy-800 sm:text-[2.1rem]">
-            Property &amp; Development Solutions
+            Simple, fair packages
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-600">
             No hidden fees. You get a clear KES quote before any work begins.
@@ -19,9 +23,10 @@ export function PackagesSection() {
             satisfied.
           </p>
         </div>
+        )}
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {PACKAGES.map((pkg) => (
+        <div className={`grid gap-5 sm:grid-cols-2 lg:grid-cols-3 ${showIntro ? "mt-10" : ""}`}>
+          {PACKAGES.map((pkg, index) => (
             <div
               key={pkg.title}
               className={`flex flex-col rounded-xl border bg-white p-6 shadow-sm ${
@@ -52,7 +57,10 @@ export function PackagesSection() {
                 ))}
               </ul>
               <Link
-                href="#book"
+                href={buildBookUrl({
+                  plan: PLAN_SLUGS[index],
+                  step: index === 2 ? 1 : 2,
+                })}
                 className={`mt-6 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition ${
                   pkg.highlighted
                     ? "bg-orange-500 text-white hover:bg-orange-600"

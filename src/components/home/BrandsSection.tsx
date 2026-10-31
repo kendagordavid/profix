@@ -1,4 +1,5 @@
-import { BRANDS } from "@/lib/constants";
+import Link from "next/link";
+import { BRANDS } from "@/content/brands";
 
 export function BrandsSection() {
   return (
@@ -19,12 +20,13 @@ export function BrandsSection() {
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           {BRANDS.map((brand) => (
-            <span
-              key={brand}
+            <Link
+              key={brand.slug}
+              href={`/brands/${brand.slug}`}
               className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm font-bold text-navy-800 transition hover:border-orange-300 hover:bg-orange-50 hover:text-orange-600"
             >
-              {brand}
-            </span>
+              {brand.name}
+            </Link>
           ))}
           <span className="rounded-lg border border-dashed border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-500">
             + Many More

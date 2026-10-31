@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { FOOTER_QUICK_LINKS, SERVICES, SITE } from "@/lib/constants";
+import { SERVICES } from "@/content/services";
+import { FOOTER_QUICK_LINKS, SITE } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-24 bg-navy-900 text-slate-300">
+    <footer className="bg-navy-900 text-slate-300">
       <div className="mx-auto max-w-7xl px-4 py-14 lg:px-6">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -40,9 +41,9 @@ export function Footer() {
             <h4 className="font-bold text-white">Services</h4>
             <ul className="mt-4 space-y-2 text-sm">
               {SERVICES.map((service) => (
-                <li key={service.title}>
+                <li key={service.slug}>
                   <Link
-                    href={`#${service.id}`}
+                    href={`/services/${service.slug}`}
                     className="transition hover:text-orange-300"
                   >
                     {service.title}

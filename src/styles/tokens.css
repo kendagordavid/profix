@@ -1,0 +1,33 @@
+/**
+ * PROfix design tokens — single source of truth for brand colors.
+ * Tailwind @theme in globals.css mirrors these values.
+ * Primary brand blue: #0056D2 | Deep navy: #0B172A
+ */
+:root {
+  --profix-brand-50: #eef4fc;
+  --profix-brand-100: #d9e6f7;
+  --profix-brand-200: #b3cdf0;
+  --profix-brand-300: #7aaae5;
+  --profix-brand-400: #4788d9;
+  --profix-brand-500: #0056d2;
+  --profix-brand-600: #0047b8;
+  --profix-brand-700: #003894;
+
+  --profix-navy-50: #f4f7fa;
+  --profix-navy-100: #e8eef5;
+  --profix-navy-200: #c5d4e8;
+  --profix-navy-300: #94a8c9;
+  --profix-navy-400: #5c7294;
+  --profix-navy-500: #3d5278;
+  --profix-navy-600: #2a4060;
+  --profix-navy-700: #1e3350;
+  --profix-navy-800: #122240;
+  --profix-navy-900: #0b172a;
+  --profix-navy-950: #070f1c;
+
+  --profix-surface-muted: #f4f7fa;
+  --profix-whatsapp: #25d366;
+  --profix-whatsapp-hover: #1ebe5d;
+
+  --profix-content-max: 75rem;
+}

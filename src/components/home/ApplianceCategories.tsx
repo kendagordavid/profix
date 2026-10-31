@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { APPLIANCES } from "@/lib/constants";
+import { APPLIANCES } from "@/content/appliances";
 
 export function ApplianceCategories() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -31,7 +31,7 @@ export function ApplianceCategories() {
             </h2>
           </div>
           <Link
-            href="#appliances"
+            href="/appliances"
             className="flex items-center gap-1 text-sm font-bold text-navy-700 transition hover:text-orange-500"
           >
             View All Appliances
@@ -55,8 +55,8 @@ export function ApplianceCategories() {
           >
             {APPLIANCES.map((appliance) => (
               <Link
-                key={appliance.name}
-                href="#book"
+                key={appliance.slug}
+                href={`/appliances/${appliance.slug}`}
                 className="group relative min-w-[190px] flex-shrink-0 overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:min-w-[210px]"
               >
                 <div className="relative h-28 w-full overflow-hidden bg-slate-100">

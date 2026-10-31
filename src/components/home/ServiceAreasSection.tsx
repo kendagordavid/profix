@@ -19,7 +19,7 @@ export function ServiceAreasSection() {
               areas. Wherever you are, we come to you.
             </p>
             <Link
-              href="#book"
+              href="/areas"
               className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-orange-500 transition hover:text-orange-600"
             >
               <MapPin className="h-4 w-4" />

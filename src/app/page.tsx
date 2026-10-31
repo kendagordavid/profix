@@ -12,8 +12,6 @@ import { ServiceAreasSection } from "@/components/home/ServiceAreasSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { StatsBar } from "@/components/home/StatsBar";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
-import { Footer } from "@/components/layout/Footer";
-
 export default function HomePage() {
   return (
     <>
@@ -31,7 +29,6 @@ export default function HomePage() {
       <AboutSection />
       <FAQSection />
       <BlogSection />
-      <Footer />
     </>
   );
 }

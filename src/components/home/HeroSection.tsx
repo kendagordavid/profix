@@ -48,7 +48,7 @@ export function HeroSection() {
 
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
-                href="#book"
+                href="/book"
                 className="btn-primary shadow-lg shadow-orange-500/25"
               >
                 <Calendar className="h-4 w-4" />

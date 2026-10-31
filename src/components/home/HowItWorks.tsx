@@ -38,7 +38,7 @@ export function HowItWorks() {
 
         <div className="mt-10 text-center">
           <Link
-            href="#book"
+            href="/book"
             className="btn-primary"
           >
             Start Your Booking

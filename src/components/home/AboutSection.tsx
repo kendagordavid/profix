@@ -34,7 +34,7 @@ export function AboutSection() {
               </p>
             </div>
             <Link
-              href="#book"
+              href="/book"
               className="btn-primary mt-8"
             >
               Book a Service

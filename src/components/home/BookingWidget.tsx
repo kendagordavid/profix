@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowRight, ChevronDown, Phone } from "lucide-react";
-import {
-  APPLIANCE_OPTIONS,
-  BRAND_OPTIONS,
-  ISSUE_OPTIONS,
-  SITE,
-} from "@/lib/constants";
+import { buildBookUrl } from "@/lib/book-url";
+import { APPLIANCES } from "@/content/appliances";
+import { BRANDS } from "@/content/brands";
+import { ISSUE_OPTIONS, SITE } from "@/lib/constants";
+
+const APPLIANCE_OPTIONS = [...APPLIANCES.map((a) => a.bookValue), "Other"];
+const BRAND_OPTIONS = [...BRANDS.map((b) => b.name), "Other"];
 
 function SelectField({
   label,
@@ -41,6 +43,7 @@ function SelectField({
 }
 
 export function BookingWidget() {
+  const router = useRouter();
   const [appliance, setAppliance] = useState("");
   const [brand, setBrand] = useState("");
   const [issue, setIssue] = useState("");
@@ -48,19 +51,14 @@ export function BookingWidget() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = [
-      "New repair booking request:",
-      appliance && `Appliance: ${appliance}`,
-      brand && `Brand: ${brand}`,
-      issue && `Issue: ${issue}`,
-      location && `Location: ${location}`,
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    window.open(
-      `${SITE.whatsapp}?text=${encodeURIComponent(message)}`,
-      "_blank"
+    router.push(
+      buildBookUrl({
+        appliance: appliance || undefined,
+        brand: brand || undefined,
+        issue: issue || undefined,
+        area: location || undefined,
+        step: location ? 4 : appliance && brand && issue ? 2 : appliance ? 1 : 1,
+      })
     );
   };
 

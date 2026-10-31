@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
-import { BLOG_POSTS, SITE } from "@/lib/constants";
+import { POSTS } from "@/content/posts";
 
 export function BlogSection() {
+  const preview = POSTS.slice(0, 3);
+
   return (
     <section id="blog" className="scroll-mt-24 bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
@@ -14,15 +16,15 @@ export function BlogSection() {
             Safety Tips &amp; Insights
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-600">
-            Simple ways to extend your appliance life, save energy, and improve
-            food safety — straight from the PROfix experts.
+            Practical guidance from the PROfix team — read more on our knowledge
+            centre.
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {BLOG_POSTS.map((post) => (
+          {preview.map((post) => (
             <article
-              key={post.title}
+              key={post.slug}
               className="group flex flex-col rounded-xl border border-slate-100 bg-slate-50/50 p-6 transition hover:-translate-y-1 hover:shadow-md"
             >
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-500">
@@ -35,16 +37,20 @@ export function BlogSection() {
                 {post.excerpt}
               </p>
               <Link
-                href={`${SITE.whatsapp}?text=${encodeURIComponent("Hi PROfix, I have a question about appliance care.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/blog/${post.slug}`}
                 className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-navy-700 transition group-hover:text-orange-500"
               >
-                Ask an Expert
+                Read article
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </article>
           ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link href="/blog" className="btn-secondary">
+            View all articles
+          </Link>
         </div>
       </div>
     </section>

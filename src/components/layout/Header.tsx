@@ -53,7 +53,10 @@ export function Header() {
 
         <nav className="hidden items-center gap-0.5 xl:flex">
           {NAV_LINKS.map((link) => {
-            const isActive = link.href === "/" && pathname === "/";
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
             return (
               <Link
                 key={link.label}
@@ -93,7 +96,7 @@ export function Header() {
             </svg>
           </a>
           <Link
-            href="#book"
+            href="/book"
             className="flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2.5 text-[13px] font-bold text-white transition hover:bg-orange-600"
           >
             <Calendar className="h-3.5 w-3.5" />
@@ -134,7 +137,7 @@ export function Header() {
               {SITE.phone}
             </a>
             <Link
-              href="#book"
+              href="/book"
               onClick={() => setMobileOpen(false)}
               className="flex items-center justify-center gap-2 rounded-full bg-orange-500 px-4 py-3 text-sm font-semibold text-white"
             >

@@ -61,7 +61,7 @@ export function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`rounded-md px-3 py-2 text-[13px] font-semibold transition ${
+                className={`whitespace-nowrap rounded-md px-2.5 py-2 text-[13px] font-semibold transition xl:px-3 ${
                   isActive
                     ? "text-orange-500"
                     : "text-slate-700 hover:text-navy-700"
@@ -76,10 +76,11 @@ export function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <a
             href={SITE.phoneHref}
-            className="flex items-center gap-2 px-2 py-2.5 text-[13px] font-bold text-navy-800 transition hover:text-orange-500"
+            aria-label={`Call ${SITE.phone}`}
+            className="flex items-center gap-2 whitespace-nowrap px-2 py-2.5 text-[13px] font-bold text-navy-800 transition hover:text-orange-500"
           >
             <Phone className="h-4 w-4" />
-            {SITE.phone}
+            <span className="hidden xl:inline">{SITE.phone}</span>
           </a>
           <a
             href={SITE.whatsapp}
@@ -94,7 +95,7 @@ export function Header() {
           </a>
           <Link
             href="/book"
-            className="rounded-full bg-navy-800 px-5 py-2.5 text-[13px] font-bold text-white transition hover:bg-navy-900"
+            className="whitespace-nowrap rounded-full bg-navy-800 px-5 py-2.5 text-[13px] font-bold text-white transition hover:bg-navy-900"
           >
             Request Service
           </Link>
